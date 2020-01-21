@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Wordstrap</title>
+    <title><?php bloginfo('name'); ?></title>
     <?php wp_head(); ?>
+    <meta name="description" content="<?php bloginfo('description'); ?>">
 </head>
 
 <body>
@@ -25,13 +26,17 @@
                         'theme_location'  => 'primary',
                         'depth'           => 2, // 1 = no dropdowns, 2 = with dropdowns.
                         'container'       => false,
-                        'menu_class'      => 'navbar-nav ml-auto',
+                        'menu_class'      => 'navbar-nav mr-auto',
                         'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
                         'walker'          => new WP_Bootstrap_Navwalker(),
                     ) );
                 ?>
-                <form class="form-inline my-2 my-lg-0">
-
+                <form method="GET" class="form-inline my-2 my-lg-0" action=<?php echo esc_url( site_url('/') ); ?>>
+                    <label for="navbar-search" class="sr-only"><?php _e('Search', 'textdomain') ?></label>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="s" id="navbar-search">
+                        <button type="submit" class="btn btn-primary"><?php _e('Search', 'textdomain') ?></button>
+                    </div>
                 </form>
             </div>
         </div>

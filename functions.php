@@ -41,7 +41,7 @@ function init_widgets($id) {
         'id' => 'sidebar',
         'before_widget' => '<div class="card">',
         'after_widget' => '</div>',
-        'before_title' => '<div class="card-body bg-secondary"><h3 class="card-title mb-0">',
+        'before_title' => '<div class="card-body bg-success"><h3 class="card-title mb-0">',
         'after_title' => '</h3></div>'
     ) );
 }
