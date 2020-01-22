@@ -25,7 +25,7 @@
                                     <?php if(has_post_thumbnail()) : ?>
                                         <!-- Display thumbnail / Featured image -->
                                         <div class="post-thumbnail">
-                                            <?php the_post_thumbnail(); ?>
+                                            <?php the_post_thumbnail('post-thumbnail', array('class' => 'img-fluid attachment-post-thumbnail size-post-thumbnail')); ?>
                                         </div>
                                     <?php endif; ?>
                                     <br>

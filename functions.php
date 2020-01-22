@@ -61,3 +61,5 @@ function wordstrap_register_widgets() {
     register_widget('WP_Widget_Recent_Posts_Custom');
 }
 add_action( 'widgets_init', 'wordstrap_register_widgets' );
+
+// Add comments
