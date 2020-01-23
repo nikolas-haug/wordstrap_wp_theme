@@ -55,6 +55,25 @@
                                     <br>
                                     <a href="<?php the_permalink(); ?>" class="btn btn-outline-dark">Read More
                                         &raquo;</a>
+                                        <?php 
+                                        
+                                        $blocks = parse_blocks(get_the_content());
+
+                                        print("<pre>".print_r($blocks,true)."</pre>");
+
+                                        foreach ($blocks as $block){
+                                            //block data
+                                            // print_r($block);
+                                            echo '<br>';
+                                            echo '<hr>';
+                                            echo '<h4>Before</h4>';
+                                            
+                                            print_r(render_block( $block ));
+                                            echo '<h4>After</h4>';
+                                            echo '<hr>';
+                                            }
+
+                                        ?>
                                 </div>
                                 <?php endif; ?>
                             </div>
